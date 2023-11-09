@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6a2731b06d.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign In</h1>
+            <form>
+                <div class="inputgroup" id="nameField">
+                    <div class="namecontainer">
+                        <div class="inputfield">
+                            <i class="fa-solid fa-user-astronaut" style="color: #5b0128;"></i>
+                            <input type="text" placeholder="UserName" id="usernamefield">
+                        </div>
+                    </div>
+                    <div class = "emailcontainer">
+                        <div class="inputfield">
+                            <i class="fa-solid fa-envelope" style="color: #5b0128;"></i>
+                            <input type="email" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="inputfield">
+                        <i class="fa-solid fa-lock" style="color: #5b0128;"></i>
+                        <input type="password" placeholder="Password">
+                    </div>
+
+                    <p>Lost password <a href="#">clic here!</a></p>
+                    
+                    <div class="btn-field">
+                        <button type="button" id="signinbtn">Sign In</button>
+                        <button type="button" id="signupbtn" class="disable">Sign Up</button>
+                    
+                </div>
+            </form>
+        </div>
+</div>
+<script>
+let signupbtn = document.getElementById("signupbtn")
+let signinbtn = document.getElementById("signinbtn")
+let nameField = document.getElementById("nameField")
+let title = document.getElementById("title")
+let usernamefield = document.getElementById("usernamefield")
+let namecontainer = document.querySelector(".namecontainer")
+let emailcontainer = document.querySelector(".emailcontainer")
+
+signupbtn.onclick = function () {
+    emailcontainer.classList.remove("hidden");
+    namecontainer.classList.add("hidden");
+    title.innerHTML = "Sign Up";
+    signinbtn.classList.add("disable");
+    signupbtn.classList.remove("disable");
+};
+
+signinbtn.onclick = function () {
+    emailcontainer.classList.add("hidden");
+    namecontainer.classList.remove("hidden");
+    title.innerHTML = "Sign In";
+    signinbtn.classList.remove("disable");
+    signupbtn.classList.add("disable");
+};
+
+    </script>
+</body>
+</html>
